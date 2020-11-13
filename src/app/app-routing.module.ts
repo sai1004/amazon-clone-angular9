@@ -17,6 +17,12 @@ const routes: Routes = [
       ),
     // canActivate: [AuthGuardService],
   },
+  {
+    path: 'welcome',
+    loadChildren: () =>
+      import('./pages/welcome/welcome.module').then((m) => m.WelcomeModule),
+    // canActivate: [AuthGuardService],
+  },
 ];
 
 @NgModule({
