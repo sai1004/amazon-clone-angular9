@@ -4,15 +4,13 @@ import { Component, OnInit } from '@angular/core';
     selector: 'logo',
     template: `
         <div fxLayoutAlign="center center">
-            <img src="../../../../assets/icon/pp.jpg" alt="logo" class="logo" />
+            <img src="../../../../assets/icon/logo.jpg" alt="logo" class="logo" />
         </div>
     `,
     styles: [
         `
             .logo {
-                height: 100px;
-                width: 100px;
-                border-radius: 50%;
+                height: 50px;
             }
         `,
     ],
