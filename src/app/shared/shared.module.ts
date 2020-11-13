@@ -8,14 +8,14 @@ import { LogoComponent } from './component/logo.component';
 import { environment } from '../../environments/environment';
 
 @NgModule({
-  declarations: [LogoComponent],
-  imports: [CommonModule, FormsModule, MaterialModule, FlexLayoutModule],
-  exports: [FormsModule, MaterialModule, FlexLayoutModule, LogoComponent],
+    declarations: [LogoComponent],
+    imports: [CommonModule, FormsModule, MaterialModule, FlexLayoutModule],
+    exports: [FormsModule, MaterialModule, FlexLayoutModule, LogoComponent],
 })
 export class SharedModule {
-  static forRoot() {
-    return {
-      ngModule: SharedModule,
-    };
-  }
+    static forRoot() {
+        return {
+            ngModule: SharedModule,
+        };
+    }
 }

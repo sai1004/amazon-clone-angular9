@@ -1,7 +1,7 @@
 export class Auth {
     uid: string;
-    email: string = 'admin@ishatech.com';
-    password: string = 'Ishatech!234';
+    email: string = 'user@amazon.in';
+    password: string = 'amazon!234';
     displayName: string;
     phoneNumber: string;
     photoURL: string;

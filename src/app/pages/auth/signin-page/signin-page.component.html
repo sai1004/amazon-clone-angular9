@@ -1,42 +1,74 @@
-<div Align="center">
-    <div fxLayout="row" fxLayoutAlign="center center" class="back-image">
-        <mat-card style="max-width: 320px">
-            <div
-                align="center"
-                style="border-radius: 50%; height: 100px; width: 100px; position: relative; margin-bottom: 18px"
-            >
-                <div class="center">
-                    <logo></logo>
+<div fxLayoutAlign="center">
+    <div>
+        <div class="logo__section">
+            <logo></logo>
+        </div>
+        <div class="card">
+            <div class="card__body">
+                <div>
+                    <h3>Login</h3>
                 </div>
-            </div>
-            <div
-                fxLayout="row wrap"
-                fxLayoutAlign="center center"
-                style="top: 6%; position: relative"
-                class="padding-half-lr margin-half-lr"
-            >
-                <div fxFlex="100">
-                    <!-- <div style="text-align: center">
-                        <h3 class="margin-half-tb">LOGIN TO YOUR ACCOUNT</h3>
-                    </div> -->
-                    <form #myForm="ngForm" novalidate autocomplete="off" (keyup.enter)="keyDownFunction(myForm)">
-                        <app-auth [(auth)]="auth" type="signin"></app-auth>
-                    </form>
-                </div>
-                <div style="width: 100%" class="margin-half-tb">
+                <div fxLayout="row wrap" fxLayoutAlign="center">
                     <div fxFlex="100">
-                        <button
-                            mat-raised-button
-                            (click)="onLogin()"
-                            color="accent"
-                            [disabled]="!myForm.valid"
-                            style="width: 100%"
-                        >
-                            LOGIN
-                        </button>
+                        <form #myForm="ngForm" novalidate autocomplete="off" (keyup.enter)="keyDownFunction(myForm)">
+                            <app-auth [(auth)]="auth" type="signin"></app-auth>
+                        </form>
+                    </div>
+
+                    <div style="width: 100%" class="margin-half-tb">
+                        <div fxFlex="100">
+                            <button
+                                mat-raised-button
+                                (click)="onLogin()"
+                                color="accent"
+                                [disabled]="!myForm.valid"
+                                style="width: 100%"
+                            >
+                                LOGIN
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</p>
                     </div>
                 </div>
             </div>
-        </mat-card>
+        </div>
     </div>
 </div>
+
+<!-- 
+<div>
+    <mat-card style="max-width: 320px">
+        <div
+            align="center"
+            style="border-radius: 50%; height: 100px; width: 100px; position: relative; margin-bottom: 18px"
+        ></div>
+        <div
+            fxLayout="row wrap"
+            fxLayoutAlign="center center"
+            style="top: 6%; position: relative"
+            class="padding-half-lr margin-half-lr"
+        >
+            <div fxFlex="100">
+                <form #myForm="ngForm" novalidate autocomplete="off" (keyup.enter)="keyDownFunction(myForm)">
+                    <app-auth [(auth)]="auth" type="signin"></app-auth>
+                </form>
+            </div>
+            <div style="width: 100%" class="margin-half-tb">
+                <div fxFlex="100">
+                    <button
+                        mat-raised-button
+                        (click)="onLogin()"
+                        color="accent"
+                        [disabled]="!myForm.valid"
+                        style="width: 100%"
+                    >
+                        LOGIN
+                    </button>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div> -->
