@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card__body">
                 <div>
-                    <h3>Login</h3>
+                    <h3 class="login__text">Login</h3>
                 </div>
                 <div fxLayout="row wrap" fxLayoutAlign="center">
                     <div fxFlex="100">
@@ -20,7 +20,7 @@
                             <button
                                 mat-raised-button
                                 (click)="onLogin()"
-                                color="accent"
+                                color="primary"
                                 [disabled]="!myForm.valid"
                                 style="width: 100%"
                             >
@@ -29,11 +29,16 @@
                         </div>
                     </div>
 
-                    <div>
+                    <div class="note">
                         <p>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</p>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="new__toamazon">
+            <p>New to Amazon?</p>
+            <button mat-raised-button color="accent" (click)="navigateToSignup()">Create your Amazon account</button>
         </div>
     </div>
 </div>

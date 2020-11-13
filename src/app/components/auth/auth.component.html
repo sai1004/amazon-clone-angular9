@@ -4,11 +4,11 @@
         <div fxFlex="100">
             <div>
                 <mat-form-field appearance="outline">
-                    <mat-label>Email</mat-label>
-                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-label>Email or Mobile</mat-label>
+                    <!-- <mat-icon matSuffix>email</mat-icon> -->
                     <input
                         matInput
-                        placeholder="Email"
+                        placeholder="Enter Your Email or Mobile"
                         [(ngModel)]="auth.email"
                         name="email"
                         #auth_userid="ngModel"
@@ -24,7 +24,7 @@
                     <mat-label>Password</mat-label>
                     <input
                         matInput
-                        placeholder="Password"
+                        placeholder="Enter Your Password"
                         [type]="hide ? 'password' : 'text'"
                         name="auth_password"
                         [(ngModel)]="auth.password"

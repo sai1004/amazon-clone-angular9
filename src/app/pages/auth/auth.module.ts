@@ -11,7 +11,10 @@ import { ResetPasswordPageComponent } from './reset-password-page/reset-password
 
 import { AuthService } from './auth.service';
 
-const routes: Routes = [{ path: 'signin', component: SigninPageComponent }];
+const routes: Routes = [
+    { path: 'signin', component: SigninPageComponent },
+    { path: 'signup', component: SignupPageComponent },
+];
 
 @NgModule({
     declarations: [SigninPageComponent, SignupPageComponent, ForgotPasswordPageComponent, ResetPasswordPageComponent],

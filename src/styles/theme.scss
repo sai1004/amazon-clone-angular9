@@ -4,9 +4,9 @@
 // @import "~font-awesome/css/font-awesome.min.css";
 @include mat-core();
 
-$primary: mat-palette($mat-blue-grey, 500, 100, 900);
+$primary: mat-palette($mat-yellow, 700, 100, 900);
 // $accent: mat-palette($mat-blue, 700, 500, 900);
-$accent: mat-palette($mat-yellow, 700, 500, 900);
+$accent: mat-palette($mat-grey, 300, 300, 300);
 $warn: mat-palette($mat-red, 800, 100, 900);
 $theme: mat-light-theme($primary, $accent, $warn);
 @include angular-material-theme($theme);

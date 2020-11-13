@@ -14,7 +14,7 @@ export class SigninPageComponent implements OnInit {
 
     auth: Auth;
 
-    constructor(private _authService: AuthService) {
+    constructor(private _authService: AuthService, private router: Router) {
         this.auth = new Auth();
     }
 
@@ -28,5 +28,7 @@ export class SigninPageComponent implements OnInit {
 
     onForgotPassword() {}
 
-    onSingup() {}
+    navigateToSignup() {
+        this.router.navigateByUrl('/auth/signup');
+    }
 }
