@@ -1,1 +1,5 @@
-<router-outlet></router-outlet>
+<!-- <app-side-nav></app-side-nav> -->
+<app-top-navbar [sessionUser]="sessionUser" [menuList]="menuList" (outputEvent)="outputEvent($event)"></app-top-navbar>
+<main>
+    <router-outlet></router-outlet>
+</main>
