@@ -3,7 +3,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 
 const routes: Routes = [
-    { path: '', pathMatch: 'full', redirectTo: 'auth/signin' },
+    { path: '', pathMatch: 'full', redirectTo: 'welcome' },
     {
         path: 'auth',
         loadChildren: () => import('./pages/auth/auth.module').then((m) => m.AuthModule),

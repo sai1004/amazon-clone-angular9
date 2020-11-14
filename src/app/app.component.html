@@ -1,5 +1,20 @@
-<!-- <app-side-nav></app-side-nav> -->
-<app-top-navbar [sessionUser]="sessionUser" [menuList]="menuList" (outputEvent)="outputEvent($event)"></app-top-navbar>
 <main>
-    <router-outlet></router-outlet>
+    <div fxLayout="row">
+        <div fxFlex="10">
+            <app-side-nav></app-side-nav>
+        </div>
+        <div fxFlex="90">
+            <div *ngIf="isShowNav">
+                <app-top-navbar
+                    [sessionUser]="sessionUser"
+                    [menuList]="menuList"
+                    (outputEvent)="outputEvent($event)"
+                ></app-top-navbar>
+            </div>
+
+            <section>
+                <router-outlet></router-outlet>
+            </section>
+        </div>
+    </div>
 </main>

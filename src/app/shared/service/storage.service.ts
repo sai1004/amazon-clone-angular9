@@ -130,44 +130,7 @@ export class StorageService implements Storage {
         return this.getSessionItem('link');
     }
 
-    getI18N(): any {
-        return this.getSessionItem('I18N');
-    }
-
-    setI18N(data: any): any {
-        return this.setSessionItem('I18N', data);
-    }
-
-    getWeb(): any {
-        return this.getSessionItem('web');
-    }
-
-    setWeb(data: any): any {
-        return this.setSessionItem('web', data);
-    }
-
-    getLang(): any {
-        return this.getSessionItem('lang');
-    }
-
-    setLang(data: any): any {
-        this.docLang = data;
-        return this.setSessionItem('lang', data);
-    }
-
-    setTheme(val: string) {
-        this.setSessionItem('theme', val);
-    }
-
-    getTheme() {
-        return this.getSessionItem('theme');
-    }
-
     clearSession(): void {
-        let langData = this.getI18N();
-        let lang = this.getLang();
-        let web = this.getWeb();
-        let theme = this.getTheme();
         this.clear();
         this.removeSessionItem('jwt');
         this.removeSessionItem('user');
@@ -178,9 +141,5 @@ export class StorageService implements Storage {
         this.removeSessionItem('lang');
         this.removeSessionItem('web');
         this.removeSessionItem('theme');
-        this.setI18N(langData);
-        this.setLang(lang);
-        this.setWeb(web);
-        this.setTheme(theme);
     }
 }

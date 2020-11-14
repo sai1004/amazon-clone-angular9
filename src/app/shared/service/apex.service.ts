@@ -13,7 +13,6 @@ export class ApexService {
     private _sessionUserSubject: Subject<Object> = new BehaviorSubject(null);
 
     private _dirSubject: Subject<any> = new BehaviorSubject(null);
-    private _alertSubject: Subject<any> = new BehaviorSubject<any>(null);
 
     constructor(private _domSanitizer: DomSanitizer, private zone: NgZone, private storageService: StorageService) {}
 
@@ -63,25 +62,5 @@ export class ApexService {
 
     bypassURL(url: string) {
         return this._domSanitizer.bypassSecurityTrustResourceUrl(url);
-    }
-
-    alertEmit(message: string, siFn: () => void, noFn: () => void) {
-        let obj = {
-            type: 'confirm',
-            text: message,
-            siFn: () => {
-                this._alertSubject.next(null); //this will close the modal
-                siFn();
-            },
-            noFn: () => {
-                this._alertSubject.next(null);
-                noFn();
-            },
-        };
-        this._alertSubject.next(obj);
-    }
-
-    alertEvent(): Observable<any> {
-        return this._alertSubject.asObservable();
     }
 }
