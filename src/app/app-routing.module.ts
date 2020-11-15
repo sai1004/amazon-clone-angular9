@@ -11,12 +11,10 @@ const routes: Routes = [
     {
         path: 'dashboard',
         loadChildren: () => import('./pages/dashboard/dashboard.module').then((m) => m.DashboardModule),
-        // canActivate: [AuthGuardService],
     },
     {
         path: 'welcome',
         loadChildren: () => import('./pages/welcome/welcome.module').then((m) => m.WelcomeModule),
-        // canActivate: [AuthGuardService],
     },
 ];
 

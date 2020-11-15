@@ -9,6 +9,8 @@ import { Auth } from '../../models/Auth';
     viewProviders: [{ provide: ControlContainer, useExisting: NgForm }],
 })
 export class AuthComponent implements OnInit {
+    hide: boolean = true;
+
     @Input()
     auth: Auth;
 
@@ -17,10 +19,6 @@ export class AuthComponent implements OnInit {
 
     @Input()
     signUpForm: FormGroup;
-
-    hide: boolean = true;
-    mobileErrMsg: string = 'Mobile number required';
-    emailErrMsg: string = 'Email required';
 
     constructor() {}
 

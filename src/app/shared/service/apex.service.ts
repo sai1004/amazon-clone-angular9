@@ -1,7 +1,7 @@
 import { Injectable, Output, EventEmitter, NgZone } from '@angular/core';
 import { Observable, AsyncSubject, Subject, BehaviorSubject } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
-import { StorageService } from './storage.service';
+
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Injectable({
@@ -14,51 +14,7 @@ export class ApexService {
 
     private _dirSubject: Subject<any> = new BehaviorSubject(null);
 
-    constructor(private _domSanitizer: DomSanitizer, private zone: NgZone, private storageService: StorageService) {}
-
-    getStorage() {
-        return this.storageService;
-    }
-
-    showMessage(message: string) {}
-
-    showLoader(show: Boolean) {
-        this.zone.run(() => {
-            this._loaderSubject.next(show);
-        });
-    }
-
-    blockScreen(show: Boolean) {
-        this.zone.run(() => {
-            this._blockSubject.next(show);
-        });
-    }
-
-    loaderEvent(): Observable<Boolean> {
-        return this._loaderSubject.asObservable();
-    }
-
-    blockEvent(): Observable<Boolean> {
-        return this._blockSubject.asObservable();
-    }
-
-    sessionUserEvent(): Observable<Object> {
-        return this._sessionUserSubject.asObservable();
-    }
-
-    dirEvent(): Observable<any> {
-        return this._dirSubject.asObservable();
-    }
-
-    dirEmit(lang: string): any {
-        this.getStorage().setLang(lang);
-        let dir = this.getStorage().getLang() == 'en' ? 'ltr' : 'rtl';
-        this._dirSubject.next(dir);
-    }
-
-    sessionUserEmit(sessionUser: any) {
-        this._sessionUserSubject.next(sessionUser);
-    }
+    constructor(private _domSanitizer: DomSanitizer, private zone: NgZone) {}
 
     bypassURL(url: string) {
         return this._domSanitizer.bypassSecurityTrustResourceUrl(url);
