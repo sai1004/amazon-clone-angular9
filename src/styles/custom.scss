@@ -15,3 +15,17 @@ a {
 .mat-form-field {
     width: 100% !important;
 }
+
+.card {
+    max-width: 348px;
+    border: 1px #ddd solid;
+    border-radius: 4px;
+}
+
+.card__body {
+    padding: 10px;
+}
+
+.max__width {
+    max-width: 1900px;
+}

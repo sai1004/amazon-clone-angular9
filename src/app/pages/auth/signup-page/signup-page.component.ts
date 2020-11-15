@@ -24,7 +24,7 @@ export class SignupPageComponent implements OnInit {
         return this.formBuilder.group({
             name: ['', Validators.required],
             mobile: ['', Validators.required],
-            email: ['', Validators.required],
+            email: [''],
             password: ['', Validators.required],
         });
     }

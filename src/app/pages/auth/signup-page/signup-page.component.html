@@ -4,12 +4,26 @@
             <logo></logo>
         </div>
         <div class="card">
-            <div class="card-body">
+            <div class="card__body">
+                <div>
+                    <h3>Create Account</h3>
+                </div>
                 <div fxLayout="row wrap" fxLayoutAlign="center">
                     <div fxFlex="100">
-                        <!-- <form [formGroup]="signUpForm" novalidate autocomplete="off" (keyup.enter)="onSignUp()">
+                        <form [formGroup]="signUpForm" novalidate autocomplete="off" (keyup.enter)="onSignUp()">
                             <app-auth [(signUpForm)]="signUpForm" type="signup"></app-auth>
-                        </form> -->
+                        </form>
+                    </div>
+                    <div>
+                        <p>We will send you a text to verify your phone. Message and Data rates may apply.</p>
+                    </div>
+                    <div style="width: 100%">
+                        <div fxFlex="100">
+                            <button mat-raised-button color="primary" style="width: 100%">Continue</button>
+                        </div>
+                    </div>
+                    <div fxFlex="100">
+                        <p>Already have an account? Sign in</p>
                     </div>
                 </div>
             </div>
