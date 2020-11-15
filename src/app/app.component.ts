@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
     ngOnInit() {}
 
     keepTrackOfActiveRoute() {
+        /* ------ Hide nav bar ------ */
         this.router.events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe((event) => {
             this.activeRoute = event;
             console.log('Active Route::', this.activeRoute.url);
