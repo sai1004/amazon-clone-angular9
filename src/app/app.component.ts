@@ -45,11 +45,11 @@ export class AppComponent implements OnInit {
     }
 
     outputEvent($event) {
-        if ($event) {
-            this.appService.navigate($event, []);
-        } else {
-            this.appService.sessionUserEmit(null);
-            this.appService.navigate('', []);
-        }
+        // if ($event) {
+        //     this.appService.navigate($event, []);
+        // } else {
+        //     this.appService.sessionUserEmit(null);
+        //     this.appService.navigate('', []);
+        // }
     }
 }

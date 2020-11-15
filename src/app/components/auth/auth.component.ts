@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ControlContainer, NgForm } from '@angular/forms';
+import { ControlContainer, FormGroup, NgForm } from '@angular/forms';
 import { Auth } from '../../models/Auth';
 
 @Component({
@@ -14,6 +14,9 @@ export class AuthComponent implements OnInit {
 
     @Input()
     type: string;
+
+    @Input()
+    signUpForm: FormGroup;
 
     hide: boolean = true;
     mobileErrMsg: string = 'Mobile number required';
