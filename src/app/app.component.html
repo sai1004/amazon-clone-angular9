@@ -1,9 +1,9 @@
-<main>
+<!-- <main>
     <div fxLayout="row">
-        <div fxFlex="10">
+        <div fxFlex="10" *ngIf="isShowNav">
             <app-side-nav></app-side-nav>
         </div>
-        <div fxFlex="90">
+        <div fxFlex="100">
             <div *ngIf="isShowNav">
                 <app-top-navbar
                     [sessionUser]="sessionUser"
@@ -11,10 +11,34 @@
                     (outputEvent)="outputEvent($event)"
                 ></app-top-navbar>
             </div>
-
             <section>
                 <router-outlet></router-outlet>
             </section>
         </div>
     </div>
-</main>
+</main> -->
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <mat-nav-list>
+            <a *ngFor="let menu of menuList" mat-list-item [routerLink]="menu.path" (click)="sidenav.toggle()">
+                {{ menu.name }}</a
+            >
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 100vh">
+            <div *ngIf="isShowNav">
+                <mat-toolbar color="warn">
+                    <button mat-icon-button aria-label="Menu" (click)="sidenav.open()">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                </mat-toolbar>
+                <div class="gap"><br /><br /><br /></div>
+            </div>
+            <main>
+                <router-outlet></router-outlet>
+            </main>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

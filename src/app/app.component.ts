@@ -9,7 +9,6 @@ import { AppService } from './shared/service/app.service';
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-    menuList: any[] = [];
     sessionUser: any = null;
     activeRoute: any;
     isShowNav: boolean = false;
@@ -21,14 +20,23 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         let sessionUser = this.appService.getSessionUser();
         this.appService.sessionUserEmit(sessionUser);
-        let menuList = this.appService.getSessionItem('menu');
     }
+
+    menuList: any[] = [
+        { name: 'mobiles', path: '/mobiles' },
+        { name: 'electronics', path: '/mobiles' },
+        { name: 'clothes', path: '/mobiles' },
+    ];
 
     keepTrackOfActiveRoute() {
         this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((event) => {
             this.activeRoute = event;
             console.log('Active Route::', this.activeRoute.url);
             if (this.activeRoute.url == '/auth/signin') {
+                this.isShowNav = false;
+            } else if (this.activeRoute.url == '/auth/signup') {
+                this.isShowNav = false;
+            } else if (this.activeRoute.url == '/auth/forgot-password') {
                 this.isShowNav = false;
             } else {
                 this.isShowNav = true;

@@ -14,6 +14,7 @@ import { AuthService } from './auth.service';
 const routes: Routes = [
     { path: 'signin', component: SigninPageComponent },
     { path: 'signup', component: SignupPageComponent },
+    { path: 'forgot-password', component: ForgotPasswordPageComponent },
 ];
 
 @NgModule({

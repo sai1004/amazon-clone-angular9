@@ -5,7 +5,6 @@
             <div>
                 <mat-form-field appearance="outline">
                     <mat-label>Email or Mobile</mat-label>
-                    <!-- <mat-icon matSuffix>email</mat-icon> -->
                     <input
                         matInput
                         placeholder="Enter Your Email or Mobile"
@@ -44,3 +43,7 @@
         </div>
     </div>
 </ng-template>
+
+<!---------------------------- auth signup template ---------------------------->
+
+<ng-template [ngIf]="type == 'signup' && auth"> </ng-template>
