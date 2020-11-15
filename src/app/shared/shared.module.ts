@@ -6,16 +6,19 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { LogoComponent } from './component/logo.component';
 
 import { environment } from '../../environments/environment';
+import { HttpService } from './service/http.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
     declarations: [LogoComponent],
-    imports: [CommonModule, FormsModule, MaterialModule, FlexLayoutModule],
-    exports: [FormsModule, ReactiveFormsModule, MaterialModule, FlexLayoutModule, LogoComponent],
+    imports: [CommonModule, FormsModule, MaterialModule, FlexLayoutModule, HttpClientModule],
+    exports: [FormsModule, ReactiveFormsModule, MaterialModule, FlexLayoutModule, LogoComponent, HttpClientModule],
 })
 export class SharedModule {
     static forRoot() {
         return {
             ngModule: SharedModule,
+            providers: [HttpService],
         };
     }
 }

@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ComponentsModule } from './components/components.module';
 import { AppService } from './shared/service/app.service';
+import { ApexService } from './shared/service/apex.service';
 
 @NgModule({
     declarations: [AppComponent],
@@ -19,7 +20,7 @@ import { AppService } from './shared/service/app.service';
         FlexLayoutModule,
         ComponentsModule,
     ],
-    providers: [AppService],
+    providers: [AppService, ApexService],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

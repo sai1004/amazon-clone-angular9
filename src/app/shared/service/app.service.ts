@@ -4,5 +4,5 @@ import { ApexService } from './apex.service';
 
 @Injectable()
 export class AppService {
-    constructor(private router: Router, private route: ActivatedRoute, private apexService: ApexService) {}
+    constructor(private router: Router, private route: ActivatedRoute) {}
 }
