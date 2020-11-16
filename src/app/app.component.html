@@ -13,17 +13,18 @@
                     <button mat-icon-button aria-label="Menu" (click)="sidenav.open()">
                         <mat-icon color="accent">menu</mat-icon>
                     </button>
-                    <!-- <div fxFlex="10"> -->
-                    <mat-icon>
-                        <img src="../assets/icon/Amazon_logo.svg" alt="logo" class="logo" />
-                    </mat-icon>
-                    <!-- </div> -->
+                    <div fxFlex="8" class="logo__section">
+                        <mat-icon>
+                            <img src="../assets/icon/Amazon_logo.svg" alt="logo" class="logo" />
+                        </mat-icon>
+                    </div>
 
                     <span class="mat-spacer"></span>
 
                     <div fxFlex="90">
                         <div fxLayout="row wrap" fxLayoutAlign="center center">
-                            <div fxFlex="70" fxFlex.lt-md="30">
+                            <div fxFlex="70">
+                                <!-- fxFlex.lt-md="30" -->
                                 <input type="search" class="input__searchbox" />
                             </div>
                             <div fxFlex="10">
