@@ -59,36 +59,36 @@
                     />
                 </mat-form-field>
 
-                <div>
-                    <ng-container *ngIf="countries">
-                        <select
-                            tabindex="0"
-                            class="custom-select isdcode"
-                            (change)="resetPhoneNumber($event)"
+                <ng-container *ngIf="countries">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Select Country For ISD Code</mat-label>
+                        <mat-select
+                            matNativeControl
+                            (change)="resetPhoneNumber()"
                             [(ngModel)]="selectedCountry"
                             #SelectedCountry="ngModel"
                             [ngModelOptions]="{ standalone: true }"
                             required
                         >
-                            <option *ngFor="let country of countries" [ngValue]="country.code">
+                            <mat-option *ngFor="let country of countries" [value]="country.code">
                                 {{ country.name }}
-                            </option>
-                        </select>
-                    </ng-container>
-
-                    <mat-form-field appearance="outline">
-                        <mat-label>Mobile</mat-label>
-                        <input
-                            matInput
-                            placeholder="Enter Your Mobile"
-                            formControlName="mobile"
-                            name="mobile"
-                            required
-                            minlength="8"
-                            maxlength="30"
-                        />
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
-                </div>
+                </ng-container>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Mobile</mat-label>
+                    <input
+                        matInput
+                        placeholder="Enter Your Mobile"
+                        formControlName="mobile"
+                        name="mobile"
+                        required
+                        minlength="8"
+                        maxlength="30"
+                    />
+                </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Email (Optional)</mat-label>

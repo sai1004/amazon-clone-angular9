@@ -51,5 +51,7 @@ export class AuthComponent implements OnInit {
         );
     }
 
-    resetPhoneNumber(e) {}
+    resetPhoneNumber() {
+        this.signUpForm.patchValue({ mobile: '' });
+    }
 }
