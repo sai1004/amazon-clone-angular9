@@ -33,3 +33,7 @@ a {
 .mat-toolbar {
     background-color: var(--primary-color) !important;
 }
+
+.mat-spacer {
+    flex: 1 1 auto;
+}

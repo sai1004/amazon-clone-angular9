@@ -11,4 +11,41 @@ mat-toolbar {
     position: fixed;
     width: 100%;
     z-index: 99;
+    color: white;
+}
+
+.input__searchbox {
+    height: 40px;
+    font-size: 18px;
+    padding: 8px;
+    min-width: 100%;
+}
+
+.logo {
+    object-fit: contain;
+    width: 100px;
+}
+
+.cart {
+    height: 50px;
+    cursor: pointer;
+}
+
+.cart__section {
+    display: flex;
+    align-items: center;
+}
+
+.cart__count {
+    padding-left: 8px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    line-height: 20px;
 }
