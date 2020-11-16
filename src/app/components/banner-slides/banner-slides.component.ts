@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-banner-slides',
@@ -8,21 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class BannerSlidesComponent implements OnInit {
     imgUrl: string;
     num: number = 0;
+
     constructor() {}
 
     ngOnInit(): void {
         this.imgUrl = this.imgs[0];
     }
 
-    imgs: any[] = [
-        '../../../assets/banner/amazon_festive_sale.jpg',
-        '../../../assets/banner/primevideo_add.jpg',
-        '../../../assets/banner/nokia_sale.jpg',
-        '../../../assets/banner/furniture_sale.jpg',
-        '../../../assets/banner/samsung_galaxy_sale.jpg',
-        '../../../assets/banner/fashion_sale.jpg',
-        '../../../assets/banner/dailyneeds_sale.jpg',
-    ];
+    @Input()
+    imgs: any;
 
     next() {
         this.num++;
