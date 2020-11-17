@@ -1,9 +1,16 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav>
         <mat-nav-list>
-            <a *ngFor="let menu of menuList" mat-list-item [routerLink]="menu.path" (click)="sidenav.toggle()">
-                {{ menu.name }}</a
+            <a mat-list-item> Accouunt </a>
+            <mat-list-item
+                *ngFor="let menu of menuList"
+                mat-list-item
+                [routerLink]="menu.path"
+                (click)="sidenav.toggle()"
             >
+                {{ menu.name }}
+                <mat-divider></mat-divider>
+            </mat-list-item>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
