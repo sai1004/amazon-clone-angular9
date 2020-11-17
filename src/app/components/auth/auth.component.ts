@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { ApexService } from 'src/app/shared/service/apex.service';
 import { Auth } from '../../models/Auth';
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
+import { LoadService } from 'src/app/shared/service/load.service';
 
 export interface ICountry {
     name?: string;
@@ -34,7 +35,7 @@ export class AuthComponent implements OnInit {
     @Output()
     selectedCountryEmitter = new EventEmitter();
 
-    constructor(private _apexService: ApexService) {}
+    constructor(private _apexService: ApexService, private _loadService: LoadService) {}
 
     ngOnInit(): void {
         this.fetchCountryList();
@@ -47,7 +48,7 @@ export class AuthComponent implements OnInit {
     }
 
     private fetchCountryList(): void {
-        this.countrySubscription = this._apexService.getCountries().subscribe(
+        this.countrySubscription = this._loadService.getCountries().subscribe(
             (res: ICountry[]) => {
                 this.countries = res;
             }
@@ -55,7 +56,7 @@ export class AuthComponent implements OnInit {
         );
     }
 
-    resetPhoneNumber() {
+    resetPhoneNumber(): void {
         this.signUpForm.patchValue({ mobile: '' });
     }
 

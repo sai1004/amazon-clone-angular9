@@ -9,6 +9,7 @@ import { environment } from '../../environments/environment';
 import { HttpService } from './service/http.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppInterceptor } from './service/app.interceptor';
+import { LoadService } from './service/load.service';
 
 @NgModule({
     declarations: [LogoComponent],
@@ -21,6 +22,7 @@ export class SharedModule {
             ngModule: SharedModule,
             providers: [
                 HttpService,
+                LoadService,
                 {
                     provide: HTTP_INTERCEPTORS,
                     useClass: AppInterceptor,

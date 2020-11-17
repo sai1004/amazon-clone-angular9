@@ -1,0 +1,77 @@
+[
+    {
+        "parentName": "Shop By Department",
+        "subMenu": [
+            {
+                "subName": "Mobiles, Computers",
+                "path": "/subpath",
+                "subSubMenu": [
+                    { "subSubMenuName": "Power Banks", "path": "/powerbanks" },
+                    { "subSubMenuName": "Covers And Cases", "path": "/c ases" },
+                    { "subSubMenuName": "Covers And Cases", "path": "/c ases" },
+                    { "subSubMenuName": "Covers And Cases", "path": "/c ases" },
+                    { "subSubMenuName": "Covers And Cases", "path": "/c ases" }
+                ],
+                "showSubSubMenu": false
+            }
+        ],
+        "path": "/mobiles",
+        "showSubmenu": false,
+        "isShowing": false,
+        "isExpanded": false
+    },
+    {
+        "parentName": "Digital Content And Devices",
+        "subMenu": [
+            {
+                "subName": "Echo & Alexa",
+                "path": "/subpath",
+                "subSubMenu": [
+                    { "subSubMenuName": "Power Banks", "path": "/powerbanks" },
+                    { "subSubMenuName": "Covers And Cases", "path": "/c ases" }
+                ],
+                "showSubSubMenu": false
+            }
+        ],
+        "path": "/mobiles",
+        "showSubmenu": false,
+        "isShowing": false,
+        "isExpanded": false
+    },
+    {
+        "parentName": "Programs & Features",
+        "subMenu": [
+            {
+                "subName": "Gift Cards & Mobile Recharges",
+                "path": "/subpath",
+                "subSubMenu": [
+                    { "subSubMenuName": "Power Banks", "path": "/powerbanks" },
+                    { "subSubMenuName": "Covers And Cases", "path": "/c ases" }
+                ],
+                "showSubSubMenu": false
+            }
+        ],
+        "path": "/mobiles",
+        "showSubmenu": false,
+        "isShowing": false,
+        "isExpanded": false
+    },
+    {
+        "parentName": "Help & Settings",
+        "subMenu": [
+            {
+                "subName": "Mobiles, Computers",
+                "path": "/subpath",
+                "subSubMenu": [
+                    { "subSubMenuName": "Power Banks", "path": "/powerbanks" },
+                    { "subSubMenuName": "Covers And Cases", "path": "/c ases" }
+                ],
+                "showSubSubMenu": false
+            }
+        ],
+        "path": "/mobiles",
+        "showSubmenu": false,
+        "isShowing": false,
+        "isExpanded": false
+    }
+]

@@ -20,8 +20,4 @@ export class ApexService {
     bypassURL(url: string) {
         return this._domSanitizer.bypassSecurityTrustResourceUrl(url);
     }
-
-    getCountries() {
-        return this._http.getJsonData(`assets/json/countries.json`);
-    }
 }
