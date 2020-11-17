@@ -32,6 +32,10 @@ export class SignupPageComponent implements OnInit {
         });
     }
 
+    getCountry(event) {
+        this.selectedCountry = event;
+    }
+
     _validatePhoneNumberInput(c: AbstractControl): object {
         let inputValue: string = c.value.toString();
         let phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
@@ -51,17 +55,6 @@ export class SignupPageComponent implements OnInit {
                     valid: false,
                 },
             };
-        }
-    }
-
-    formatPhoneNumber(event: any): void {
-        let inputValue: any = this.signUpForm.controls['mobile'].value;
-        let phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
-        if (phoneNumber) {
-            this.selectedPhoneNumber = phoneNumber.number;
-            this.signUpForm.patchValue({ mobile: phoneNumber.formatInternational() });
-            // this.signUpForm.patchValue({ mobile: this.signUpForm.value.mobile });
-            // this.signUpForm.patchValue({ iso2: this.selectedCountry });
         }
     }
 }

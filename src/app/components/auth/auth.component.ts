@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ControlContainer, FormGroup, NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { ApexService } from 'src/app/shared/service/apex.service';
 import { Auth } from '../../models/Auth';
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
 
 export interface ICountry {
     name?: string;
@@ -30,6 +31,9 @@ export class AuthComponent implements OnInit {
     @Input()
     signUpForm: FormGroup;
 
+    @Output()
+    selectedCountryEmitter = new EventEmitter();
+
     constructor(private _apexService: ApexService) {}
 
     ngOnInit(): void {
@@ -53,5 +57,14 @@ export class AuthComponent implements OnInit {
 
     resetPhoneNumber() {
         this.signUpForm.patchValue({ mobile: '' });
+    }
+
+    formatPhoneNumber(event: any): void {
+        let inputValue: any = this.signUpForm.value.mobile;
+        let phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
+        if (phoneNumber) {
+            this.selectedPhoneNumber = phoneNumber.number;
+            this.signUpForm.patchValue({ mobile: phoneNumber.formatInternational() });
+        }
     }
 }

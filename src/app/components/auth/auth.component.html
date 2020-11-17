@@ -84,9 +84,8 @@
                         placeholder="Enter Your Mobile"
                         formControlName="mobile"
                         name="mobile"
+                        (input)="formatPhoneNumber($event)"
                         required
-                        minlength="8"
-                        maxlength="30"
                     />
                 </mat-form-field>
 

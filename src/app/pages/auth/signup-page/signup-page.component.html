@@ -11,7 +11,11 @@
                 <div fxLayout="row wrap" fxLayoutAlign="center">
                     <div fxFlex="100">
                         <form [formGroup]="signUpForm" novalidate autocomplete="off" (keyup.enter)="onSignUp()">
-                            <app-auth [(signUpForm)]="signUpForm" type="signup"></app-auth>
+                            <app-auth
+                                [(signUpForm)]="signUpForm"
+                                type="signup"
+                                (selectedCountryEmitter)="getCountry($event)"
+                            ></app-auth>
                         </form>
                     </div>
                     <div>
