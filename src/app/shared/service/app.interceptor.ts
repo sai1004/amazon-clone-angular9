@@ -9,7 +9,7 @@ import {
 } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { delay, finalize, map, tap } from 'rxjs/operators';
+import { delay, finalize, tap } from 'rxjs/operators';
 import { AppService } from './app.service';
 
 @Injectable()
@@ -19,7 +19,7 @@ export class AppInterceptor implements HttpInterceptor {
     constructor(private appSerivce: AppService) {}
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        if (request.url == 'localhost') {
+        if (request.url == 'http://127.0.0.1:5000') {
             request = request.clone({
                 setHeaders: {
                     'Content-Type': this.CONTENT_TYPE,
