@@ -5,6 +5,10 @@ import { SharedModule } from './shared/shared.module';
 const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'welcome' },
     {
+        path: 'welcome',
+        loadChildren: () => import('./pages/welcome/welcome.module').then((m) => m.WelcomeModule),
+    },
+    {
         path: 'auth',
         loadChildren: () => import('./pages/auth/auth.module').then((m) => m.AuthModule),
     },
@@ -13,8 +17,8 @@ const routes: Routes = [
         loadChildren: () => import('./pages/dashboard/dashboard.module').then((m) => m.DashboardModule),
     },
     {
-        path: 'welcome',
-        loadChildren: () => import('./pages/welcome/welcome.module').then((m) => m.WelcomeModule),
+        path: 'cart',
+        loadChildren: () => import('./pages/cart/cart.module').then((m) => m.CartModule),
     },
 ];
 

@@ -19,7 +19,6 @@ export interface ICountry {
 export class AuthComponent implements OnInit {
     hide: boolean = true;
     selectedCountry: any = 'MY';
-    selectedPhoneNumber: any;
     countries: any[];
     countrySubscription: Subscription;
 
@@ -55,8 +54,8 @@ export class AuthComponent implements OnInit {
         );
     }
 
-    resetPhoneNumber(e): void {
-        this.selectedCountry = e.value;
+    resetPhoneNumber(event: any): void {
+        this.selectedCountry = event.value;
         this.selectedCountryEmitter.emit(this.selectedCountry);
         this.signUpForm.patchValue({ mobile: '' });
     }
@@ -65,7 +64,6 @@ export class AuthComponent implements OnInit {
         let inputValue: any = event;
         let phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
         if (phoneNumber) {
-            this.selectedPhoneNumber = phoneNumber.number;
             this.signUpForm.patchValue({ mobile: phoneNumber.formatInternational() });
         }
     }
