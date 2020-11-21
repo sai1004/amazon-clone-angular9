@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'logo',
     template: `
         <div fxLayoutAlign="center center">
-            <img src="../../../../assets/icon/logo.jpg" alt="logo" class="logo" />
+            <img src="../../../../assets/icon/amazon_logo.svg" alt="logo" class="logo" *ngIf="!name" />
+            <img src="../../../../assets/icon/amazon_logo_black.svg" alt="logo" class="logo" *ngIf="name" />
         </div>
     `,
     styles: [
@@ -19,4 +20,7 @@ export class LogoComponent implements OnInit {
     constructor() {}
 
     ngOnInit() {}
+
+    @Input()
+    name: string;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-welcome-page',
@@ -6,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./welcome-page.component.scss'],
 })
 export class WelcomePageComponent implements OnInit {
-    constructor() {}
+    htmlEle: any = `
+    
+        <h1>,kjhkjhkjhk</h1>
+        <input type="text" value="hjgjhgjhgj"> 
 
-    ngOnInit(): void {}
+    `;
+
+    constructor(public dom: DomSanitizer) {}
+
+    ngOnInit(): void {
+        // this.dom(this.htmlEle);
+    }
 
     imgs: any[] = [
         '../../../assets/banner/amazon_festive_sale.jpg',

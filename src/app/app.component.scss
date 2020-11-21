@@ -39,8 +39,8 @@ mat-toolbar {
 }
 
 .logo {
-    object-fit: contain;
-    width: 86px;
+    object-fit: contain !important;
+    width: 86px !important;
     margin-top: 5px;
 }
 
