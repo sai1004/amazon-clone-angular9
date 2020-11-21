@@ -28,10 +28,10 @@ export class SignupPageComponent implements OnInit {
     createFormWithBuilder() {
         return this.formBuilder.group({
             name: ['', Validators.required],
-            mobile: ['', Validators.required, this._validatePhoneNumberInput.bind(this)],
+            mobile: ['', [Validators.required, this._validatePhoneNumberInput.bind(this)]],
             email: [''],
             password: ['', Validators.required],
-            selectedCountry: [''],
+            selectedCountry: ['MY'],
         });
     }
 
@@ -42,7 +42,6 @@ export class SignupPageComponent implements OnInit {
 
     _validatePhoneNumberInput(c: AbstractControl): object {
         let inputValue: string = c.value.toString();
-        console.log('vali', this.selectedCountry);
         let phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
         if (phoneNumber) {
             if (phoneNumber.isValid()) {

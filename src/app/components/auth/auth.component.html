@@ -81,7 +81,7 @@
                         formControlName="mobile"
                         name="mobile"
                         #mobileEle
-                        (input)="formatPhoneNumber($event)"
+                        (input)="formatPhoneNumber($event.target.value)"
                         required
                     />
                 </mat-form-field>

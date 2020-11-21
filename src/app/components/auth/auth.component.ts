@@ -56,14 +56,13 @@ export class AuthComponent implements OnInit {
     }
 
     resetPhoneNumber(e): void {
-        this.signUpForm.patchValue({ mobile: '' });
-        console.log('child', e.value);
         this.selectedCountry = e.value;
         this.selectedCountryEmitter.emit(this.selectedCountry);
+        this.signUpForm.patchValue({ mobile: '' });
     }
 
     formatPhoneNumber(event: any): void {
-        let inputValue: any = this.signUpForm.value.mobile;
+        let inputValue: any = event;
         let phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
         if (phoneNumber) {
             this.selectedPhoneNumber = phoneNumber.number;
