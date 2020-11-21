@@ -59,23 +59,19 @@
                     />
                 </mat-form-field>
 
-                <ng-container *ngIf="countries">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Select Country For ISD Code</mat-label>
-                        <mat-select
-                            matNativeControl
-                            (change)="resetPhoneNumber()"
-                            [(ngModel)]="selectedCountry"
-                            #SelectedCountry="ngModel"
-                            [ngModelOptions]="{ standalone: true }"
-                            required
-                        >
-                            <mat-option *ngFor="let country of countries" [value]="country.code">
-                                {{ country.name }}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </ng-container>
+                <mat-form-field appearance="outline">
+                    <mat-label>Select Country For ISD Code</mat-label>
+                    <mat-select
+                        name="selectedCountry"
+                        formControlName="selectedCountry"
+                        (selectionChange)="resetPhoneNumber($event)"
+                        required
+                    >
+                        <mat-option *ngFor="let country of countries" value="{{ country.code }}">
+                            {{ country.name }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Mobile</mat-label>
@@ -84,6 +80,7 @@
                         placeholder="Enter Your Mobile"
                         formControlName="mobile"
                         name="mobile"
+                        #mobileEle
                         (input)="formatPhoneNumber($event)"
                         required
                     />

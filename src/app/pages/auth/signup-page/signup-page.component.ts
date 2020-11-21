@@ -21,7 +21,9 @@ export class SignupPageComponent implements OnInit {
 
     ngOnInit(): void {}
 
-    onSignUp() {}
+    onSignUp() {
+        console.log(this.signUpForm.value);
+    }
 
     createFormWithBuilder() {
         return this.formBuilder.group({
@@ -29,15 +31,18 @@ export class SignupPageComponent implements OnInit {
             mobile: ['', Validators.required, this._validatePhoneNumberInput.bind(this)],
             email: [''],
             password: ['', Validators.required],
+            selectedCountry: [''],
         });
     }
 
     getCountry(event) {
         this.selectedCountry = event;
+        console.log('e+ this', event, this.selectedCountry);
     }
 
     _validatePhoneNumberInput(c: AbstractControl): object {
         let inputValue: string = c.value.toString();
+        console.log('vali', this.selectedCountry);
         let phoneNumber: any = parsePhoneNumberFromString(inputValue, this.selectedCountry);
         if (phoneNumber) {
             if (phoneNumber.isValid()) {

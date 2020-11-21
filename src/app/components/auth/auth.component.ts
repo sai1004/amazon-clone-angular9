@@ -32,8 +32,7 @@ export class AuthComponent implements OnInit {
     @Input()
     signUpForm: FormGroup;
 
-    @Output()
-    selectedCountryEmitter = new EventEmitter();
+    @Output() selectedCountryEmitter: EventEmitter<any> = new EventEmitter();
 
     constructor(private _apexService: ApexService, private _loadService: LoadService) {}
 
@@ -56,8 +55,11 @@ export class AuthComponent implements OnInit {
         );
     }
 
-    resetPhoneNumber(): void {
+    resetPhoneNumber(e): void {
         this.signUpForm.patchValue({ mobile: '' });
+        console.log('child', e.value);
+        this.selectedCountry = e.value;
+        this.selectedCountryEmitter.emit(this.selectedCountry);
     }
 
     formatPhoneNumber(event: any): void {
